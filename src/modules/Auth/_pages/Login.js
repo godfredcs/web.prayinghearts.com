@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+
 import {emailChanged, passwordChanged} from '../_store/AuthActions';
 
 import {Header} from '../../../components';
@@ -20,7 +22,7 @@ class Login extends Component {
                 <hr />
                 <p>email: {this.props.email}</p>
                 <p>password: {this.props.password}</p>
-                <button>Go to register</button>
+                <button onClick={() => this.props.history.push('/register')}>Go to register</button>
             </div>
         );
     }
@@ -33,4 +35,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
     emailChanged, passwordChanged
-})(Login);
+})(withRouter(Login));
