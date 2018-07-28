@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 import {emailChanged, passwordChanged} from '../_store/AuthActions';
 
-import {Header} from '../../../components';
+import {Header, Footer} from '../../../components';
 
 class Login extends Component {
     componentDidMount() {
@@ -23,6 +23,7 @@ class Login extends Component {
                 <p>email: {this.props.email}</p>
                 <p>password: {this.props.password}</p>
                 <button onClick={() => this.props.history.push('/register')}>Go to register</button>
+                <Footer />
             </div>
         );
     }
