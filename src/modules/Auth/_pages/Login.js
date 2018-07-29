@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
 import {emailChanged, passwordChanged} from '../_store/AuthActions';
 
-import {Header, Footer} from '../../../components';
-
-class Login extends Component {
+class Login extends React.Component {
     componentDidMount() {
 
     }
@@ -14,7 +12,6 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Header />
                 <h1>Login</h1>
                 <p>This is the Login screen</p>
                 <input value={this.props.email} onChange={event => this.props.emailChanged(event.target.value)} />
@@ -22,8 +19,7 @@ class Login extends Component {
                 <hr />
                 <p>email: {this.props.email}</p>
                 <p>password: {this.props.password}</p>
-                <button onClick={() => this.props.history.push('/register')}>Go to register</button>
-                <Footer />
+                <button onClick={this.props.showRegister}>Go to register</button>
             </div>
         );
     }
@@ -34,6 +30,4 @@ const mapStateToProps = state => {
     return {email, password};
 }
 
-export default connect(mapStateToProps, {
-    emailChanged, passwordChanged
-})(withRouter(Login));
+export default connect(mapStateToProps, {emailChanged, passwordChanged})(withRouter(Login));
