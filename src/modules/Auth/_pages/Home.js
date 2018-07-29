@@ -11,7 +11,7 @@ class Home extends React.Component {
     render() {
         return (
             <div style={styles.container}>
-                <Header />
+                <Header authenticated={false} />
 
                 <div>
                     {

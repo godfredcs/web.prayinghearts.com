@@ -3,7 +3,7 @@ import React from 'react';
 export default () => (
     <footer style={styles.container}>
         <div style={styles.innerContainer}>
-            copyright prayinghearts@{new Date().getFullYear()}
+            prayinghearts@{new Date().getFullYear()}
         </div>
     </footer>
 );

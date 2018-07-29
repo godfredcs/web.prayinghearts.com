@@ -5,13 +5,17 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
-                <div>
-                    <ul>
-                    <li><NavLink to="/login">login</NavLink></li>
-                    <li><NavLink to="/register">Register</NavLink></li>
-                    </ul>
-                </div>
+            <header id="header">
+                <h2>Praying Hearts</h2>
+                {
+                    this.props.authenticated
+
+                        ? <ul>
+                            <li><NavLink to="/login">login</NavLink></li>
+                            <li><NavLink to="/register">Register</NavLink></li>
+                        </ul>
+                        : null
+                }
             </header>
         );
     }

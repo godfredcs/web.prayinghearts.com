@@ -11,15 +11,31 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Login</h1>
-                <p>This is the Login screen</p>
-                <input value={this.props.email} onChange={event => this.props.emailChanged(event.target.value)} />
-                <input value={this.props.password} onChange={event => this.props.passwordChanged(event.target.value)} />
-                <hr />
-                <p>email: {this.props.email}</p>
-                <p>password: {this.props.password}</p>
-                <button onClick={this.props.showRegister}>Go to register</button>
+            <div className="form">
+                <div>
+                    <h1 style={{color: 'brown'}}>Login</h1>
+
+                    <div className="align-center">
+                        <input
+                            placeholder="Email"
+                            value={this.props.email}
+                            onChange={event => this.props.emailChanged(event.target.value)}
+                        />
+                    </div>
+
+                    <div className="align-center">
+                        <input
+                            placeholder="Password"
+                            value={this.props.password}
+                            onChange={event => this.props.passwordChanged(event.target.value)}
+                        />
+                    </div>
+
+                    <div className="align-center">
+                        <button onClick={() => {}} className="login-button">Login</button>
+                    </div>
+        {/*<button onClick={this.props.showRegister}>Go to register</button>*/ }
+                </div>
             </div>
         );
     }
